@@ -1,3 +1,3 @@
-const baseUrl = "todo-app-api-dusky.vercel.app/api"
+const baseUrl = "https://todo-app-api-dusky.vercel.app/api"
 
 export default baseUrl
