@@ -6,11 +6,11 @@
       "use": "@vercel/node"
     }
   ],
-  "buildCommand": "npm i",
   "routes": [
     {
-      "src": "src/(.*)",
+      "src": "/api/(.*)",
       "dest": "src/index.js"
     }
-  ]
+  ],
+  "buildCommand": "npm install"
 }
