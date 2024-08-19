@@ -3,7 +3,7 @@ import { deleteToDo, getToDos, postToDo, updateToDo } from "../controllers/todo.
 
 const router = Router()
 
-router.get("/get", function () {})
+router.get("/", function (req,res) {res.send("Hello")})
 
 router.get("/get", getToDos)
 
