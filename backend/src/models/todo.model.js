@@ -9,7 +9,7 @@ const toDoSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+}, { timestamps: true })
 
 const ToDoModel = mongoose.model("todo", toDoSchema)
 
