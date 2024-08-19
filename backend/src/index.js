@@ -17,10 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // CORS configuration
 app.use(cors({
-    origin: process.env.FRONTENDURL,
-    methods: ['GET'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+}))
+
 
 
 app.use("/api", router)
