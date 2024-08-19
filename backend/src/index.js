@@ -1,40 +1,32 @@
-// imports
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { connectDB } from "./db/dbConnection.js";
-import { app } from "./app.js";
 import router from "./routes/toDoRoute.js";
 
-// dot env
 dotenv.config({
     path: './env'
-})
+});
 
+const app = express();
 
-// middle ware
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use("/api", router)
-
-// database connection vye paxi matra app run garni 
+// Database connection and server start
 connectDB()
     .then(() => {
-        const PORT = process.env.PORT || 3000;
-        app.on("error", (error) => {
-            console.log("Error", error)
-            throw error
-        })
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`);
-        });
+        console.log("Database connected successfully");
     })
     .catch((error) => {
         console.error("MONGO CONNECTION FAILED !!!", error);
         process.exit(1);
     });
 
+// Routes
+app.use("/api", router);
 
-
+// Export app for Vercel
+export default app;
