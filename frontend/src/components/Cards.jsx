@@ -4,7 +4,7 @@ import { motion, useDragControls } from "framer-motion";
 import axios from "axios";
 import baseUrl from "../utils/constants";
 
-const Cards = ({ constraintContainer, databaseData, fileSize, setPostUpdated }) => {
+const Cards = ({ constraintContainer, databaseData, setPostUpdated }) => {
     const [open, setOpen] = React.useState({});
     const [edit, setEdit] = React.useState({});
     const [hasClass, setHasClass] = React.useState(false);
@@ -153,7 +153,17 @@ const Cards = ({ constraintContainer, databaseData, fileSize, setPostUpdated }) 
                                 </div>
                                 <div className="card-button absolute w-full bottom-0 left-0 ">
                                     <div className="size-icon px-5 flex justify-between items-center mb-7">
-                                        <h6 className="size">0.{fileSize[index]}mb</h6>
+                                        <h6 className="size text-[12px]">
+                                            <span>
+                                                Last updated date : {cardData.updatedAt.substring(8, 10)}/
+                                                {cardData.updatedAt.substring(5, 7)}/{`${cardData.updatedAt.substring(0, 4)} `}{" "}
+                                            </span>{" "}
+                                            <br />
+                                            <span className="text-[12px]">{`Last updated time : ${cardData.updatedAt.substring(
+                                                11,
+                                                16
+                                            )} `}</span>
+                                        </h6>
                                         <h6 className="bg-blue-600/60 flex justify-center text-xs items-center rounded-full w-[20px] h-[20px]">
                                             {index + 1}
                                         </h6>
