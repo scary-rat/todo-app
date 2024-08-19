@@ -27,7 +27,7 @@ connectDB()
     .then(() => {
         const PORT = process.env.PORT || 3000;
         app.on("error", (error) => {
-            console.log("Error", error)
+            console.log("Error did not connect", error)
             throw error
         })
         app.listen(PORT, () => {
