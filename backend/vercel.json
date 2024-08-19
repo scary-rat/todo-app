@@ -9,7 +9,7 @@
   "buildCommand": "npm i",
   "routes": [
     {
-      "src": "src/(.*)",    // Handle all API routes
+      "src": "src/(.*)",
       "dest": "src/"
     }
   ]
