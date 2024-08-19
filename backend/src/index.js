@@ -18,8 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 // CORS configuration
 app.use(cors({
     origin: process.env.FRONTENDURL,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
