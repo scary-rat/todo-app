@@ -15,13 +15,11 @@ dotenv.config({
 // middle ware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(
-    {
-        origin: {"https://todo-app-eta-gray.vercel.app"},
-        methods: ["POST", "GET", "PUT", "DELETE"],
-        credentials: true
-    }
-));
+app.use(cors({
+    origin: "https://todo-app-eta-gray.vercel.app", // your frontend origin
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
+}));
 
 
 // database connection vye paxi matra app run garni 
