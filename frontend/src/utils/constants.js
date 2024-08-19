@@ -1,3 +1,3 @@
-const baseUrl = "http://localhost:8000/api"
+const baseUrl = "todo-app-api-dusky.vercel.app/api"
 
 export default baseUrl
