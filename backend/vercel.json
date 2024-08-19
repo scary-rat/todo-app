@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "buildCommand": "npm i",
+  "routes": [
+    {
+      "src": "src/(.*)",    // Handle all API routes
+      "dest": "src/"
+    }
+  ]
+}
