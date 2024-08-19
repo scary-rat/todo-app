@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(
     {
-        origin: {"https://todo-app-eta-gray.vercel.app/"},
+        origin: {"https://todo-app-eta-gray.vercel.app"},
         methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     }
