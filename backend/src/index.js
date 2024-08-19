@@ -22,6 +22,8 @@ app.use(cors({
 }));
 
 
+app.use("/api", router)
+
 // database connection vye paxi matra app run garni 
 connectDB()
     .then(() => {
@@ -40,7 +42,7 @@ connectDB()
     });
 
 
-app.use("/api", router)
+
 
 
 
